@@ -1,0 +1,10 @@
+   ----
+   Release notes
+
+Release notes
+
+* 0.3.0 (2008-02-10)
+
+    * Migration: CVS to SVN
+
+    * Migration: Ant to Maven
