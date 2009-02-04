@@ -123,15 +123,7 @@ public class IniParser
     
     public void parse(URL input, IniHandler handler) throws IOException, InvalidIniFormatException
     {
-        InputStream stream = input.openStream();
-        try
-        {
-	    parse(stream, handler);
-        }
-        finally
-        {
-            stream.close();
-        }
+	parse(input.openStream(), handler);
     }
 
     public void parseXML(InputStream input, IniHandler handler) throws IOException, InvalidIniFormatException
