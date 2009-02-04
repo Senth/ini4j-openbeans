@@ -25,8 +25,8 @@ public class IniFile extends IniPreferences
 {
     public static enum Mode {RO,WO,RW};
     
-    private final Mode _mode;
-    private final File _file;
+    private Mode _mode;
+    private File _file;
 
     public IniFile(File file, Mode mode) throws BackingStoreException
     {
@@ -88,15 +88,7 @@ public class IniFile extends IniPreferences
         {
             synchronized (lock)
             {
-                FileWriter writer = new FileWriter(_file);
-                try
-                {
-                    getIni().store(writer);
-                }
-                finally
-                {
-                    writer.close();
-                }
+                getIni().store(new FileWriter(_file));
             }
         }
         catch (Exception x)
