@@ -15,9 +15,9 @@
  */
 package org.ini4j.sample;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyVetoException;
-import java.beans.VetoableChangeListener;
+import com.googlecode.openbeans.PropertyChangeListener;
+import com.googlecode.openbeans.PropertyVetoException;
+import com.googlecode.openbeans.VetoableChangeListener;
 
 import java.net.URI;
 

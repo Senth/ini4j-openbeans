@@ -31,10 +31,10 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyVetoException;
-import java.beans.VetoableChangeListener;
+import com.googlecode.openbeans.PropertyChangeEvent;
+import com.googlecode.openbeans.PropertyChangeListener;
+import com.googlecode.openbeans.PropertyVetoException;
+import com.googlecode.openbeans.VetoableChangeListener;
 
 import java.lang.reflect.Proxy;
 

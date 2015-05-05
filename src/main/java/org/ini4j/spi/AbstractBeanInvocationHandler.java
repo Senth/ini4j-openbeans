@@ -15,12 +15,12 @@
  */
 package org.ini4j.spi;
 
-import java.beans.Introspector;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.beans.PropertyVetoException;
-import java.beans.VetoableChangeListener;
-import java.beans.VetoableChangeSupport;
+import com.googlecode.openbeans.Introspector;
+import com.googlecode.openbeans.PropertyChangeListener;
+import com.googlecode.openbeans.PropertyChangeSupport;
+import com.googlecode.openbeans.PropertyVetoException;
+import com.googlecode.openbeans.VetoableChangeListener;
+import com.googlecode.openbeans.VetoableChangeSupport;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationHandler;

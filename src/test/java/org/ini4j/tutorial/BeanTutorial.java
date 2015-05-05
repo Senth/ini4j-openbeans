@@ -111,7 +111,7 @@ public class BeanTutorial extends AbstractTutorial
 //|
 //|* Marshalling beans
 //|
-//| Sometimes we want to store existing java beans in text file. This operation
+//| Sometimes we want to store existing com.googlecode.openbeans in text file. This operation
 //| usually called marshalling.
 //|
 //| With [ini4j] it is easy to store bean properties in a section. You simply

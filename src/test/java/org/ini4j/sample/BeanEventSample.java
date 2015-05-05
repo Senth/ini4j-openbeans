@@ -33,8 +33,8 @@ package org.ini4j.sample;
 //{
 import org.ini4j.Ini;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+import com.googlecode.openbeans.PropertyChangeEvent;
+import com.googlecode.openbeans.PropertyChangeListener;
 
 import java.io.FileInputStream;
 

@@ -13,6 +13,13 @@
 <!--         <developerConnection>scm:svn:svn+ssh://szkiba@svn.code.sf.net/p/ini4j/code/trunk</developerConnection> -->
 <!--         <url>https://svn.code.sf.net/p/ini4j/code/trunk/</url> -->
 <!--     </scm> -->
+
+	<repositories>
+		<repository>
+			<id>senth</id>
+			<url>http://maven.senth.org/releases</url>
+		</repository>
+	</repositories>
     <distributionManagement>
 <!--         <repository> -->
 <!-- 			<uniqueVersion>false</uniqueVersion> -->
@@ -93,7 +100,12 @@
             <artifactId>retrotranslator-runtime</artifactId>
             <version>1.2.4</version>
             <optional>true</optional>
-        </dependency>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.openbeans</groupId>
+			<artifactId>openbeans</artifactId>
+			<version>1.0</version>
+		</dependency>
     </dependencies>
     <properties>
 <!--         <upload.url>scpexe://shell.sourceforge.net/home/frs/project/ini4j</upload.url> -->
