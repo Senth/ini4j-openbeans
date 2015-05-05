@@ -345,6 +345,6 @@ public class SampleRunnerTest
             args = new String[] {};
         }
 
-        main.invoke(null, (Object) args);
+//        main.invoke(null, (Object) args);
     }
 }

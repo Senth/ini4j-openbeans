@@ -2,33 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ini4j</groupId>
-    <artifactId>ini4j</artifactId>
+    <artifactId>ini4j-openbeans</artifactId>
     <version>0.5.5-SNAPSHOT</version>
-    <name>ini4j</name>
-    <description>Java API for handling configuration files in Windows .ini format. The library includes its own Map based API, Java Preferences API and Java Beans API for handling .ini files. Additionally, the library includes a feature rich (variable/macro substitution, multiply property values, etc) java.util.Properties replacement.</description>
+    <name>ini4j-openbeans</name>
+    <description>Fork of official ini4j, uses com.googlecode.openbeans instead of java.beans for Android support. Java API for handling configuration files in Windows .ini format. The library includes its own Map based API, Java Preferences API and Java Beans API for handling .ini files. Additionally, the library includes a feature rich (variable/macro substitution, multiply property values, etc) java.util.Properties replacement.</description>
     <packaging>jar</packaging>
     <url>http://www.ini4j.org</url>
-    <scm>
-        <connection>scm:svn:svn+ssh://szkiba@svn.code.sf.net/p/ini4j/code/trunk</connection>
-        <developerConnection>scm:svn:svn+ssh://szkiba@svn.code.sf.net/p/ini4j/code/trunk</developerConnection>
-        <url>https://svn.code.sf.net/p/ini4j/code/trunk/</url>
-    </scm>
+<!--     <scm> -->
+<!--         <connection>scm:svn:svn+ssh://szkiba@svn.code.sf.net/p/ini4j/code/trunk</connection> -->
+<!--         <developerConnection>scm:svn:svn+ssh://szkiba@svn.code.sf.net/p/ini4j/code/trunk</developerConnection> -->
+<!--         <url>https://svn.code.sf.net/p/ini4j/code/trunk/</url> -->
+<!--     </scm> -->
     <distributionManagement>
-        <repository>
-            <id>ini4j-release</id>
-            <name>[ini4j] releases on OSSRH</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
+<!--         <repository> -->
+<!-- 			<uniqueVersion>false</uniqueVersion> -->
+<!-- 			<id>senth</id> -->
+<!-- 			<name>Senth's Maven Repository</name> -->
+<!-- 			<url>scp://senth.org/mnt/lvm/www/maven.senth.org/releases</url> -->
+<!-- 			<layout>default</layout> -->
+<!--         </repository> -->
         <snapshotRepository>
-            <id>ini4j-snapshot</id>
-            <name>[ini4j] snapshots on OSSRH</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+			<id>senth</id>
+			<name>Senth's Maven Repository</name>
+			<url>scp://senth.org/mnt/lvm/www/maven.senth.org/snapshots</url>
+			<layout>default</layout>
         </snapshotRepository>
-        <site>
-            <id>ini4j-site</id>
-            <name>[ini4j] site on SourceForge</name>
-            <url>scpexe://shell.sourceforge.net/home/project-web/ini4j/htdocs</url>
-        </site>
+<!--         <site> -->
+<!--             <id>ini4j-site</id> -->
+<!--             <name>[ini4j] site on SourceForge</name> -->
+<!--             <url>scpexe://shell.sourceforge.net/home/project-web/ini4j/htdocs</url> -->
+<!--         </site> -->
     </distributionManagement>
     <issueManagement>
         <system>sourceforge</system>
@@ -92,7 +96,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <upload.url>scpexe://shell.sourceforge.net/home/frs/project/ini4j</upload.url>
+<!--         <upload.url>scpexe://shell.sourceforge.net/home/frs/project/ini4j</upload.url> -->
         <check.skip>true</check.skip>
         <!-- <jdk14.home>/usr/local/j2sdk1.4.2_19</jdk14.home> -->
     </properties>
@@ -348,36 +352,36 @@
             <!-- Enabling the use of SSH -->
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>1.0-beta-6</version>
+                <artifactId>wagon-ssh</artifactId>
+				<version>2.5</version>
             </extension>
         </extensions>		
         <plugins>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.3</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>            
+<!--             <plugin> -->
+<!--                 <groupId>org.sonatype.plugins</groupId> -->
+<!--                 <artifactId>nexus-staging-maven-plugin</artifactId> -->
+<!--                 <version>1.6.3</version> -->
+<!--                 <extensions>true</extensions> -->
+<!--                 <configuration> -->
+<!--                     <serverId>ossrh</serverId> -->
+<!--                     <nexusUrl>https://oss.sonatype.org/</nexusUrl> -->
+<!--                     <autoReleaseAfterClose>true</autoReleaseAfterClose> -->
+<!--                 </configuration> -->
+<!--             </plugin>             -->
+<!--             <plugin> -->
+<!--                 <groupId>org.apache.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-gpg-plugin</artifactId> -->
+<!--                 <version>1.5</version> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <id>sign-artifacts</id> -->
+<!--                         <phase>verify</phase> -->
+<!--                         <goals> -->
+<!--                             <goal>sign</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--             </plugin>             -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changes-plugin</artifactId>
@@ -535,51 +539,51 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>upload-all</id>
-                        <goals>
-                            <goal>upload</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                        <configuration>
-                            <serverId>ini4j-upload</serverId>
-                            <fromDir>${project.build.directory}</fromDir>
-                            <includes>${project.build.finalName}-all.zip,ReleaseNotest.txt</includes>
-                            <url>${upload.url}/ini4j/${project.version}</url>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>upload-src</id>
-                        <goals>
-                            <goal>upload</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                        <configuration>
-                            <serverId>ini4j-upload</serverId>
-                            <fromDir>${project.build.directory}</fromDir>
-                            <includes>${project.build.finalName}-src.zip,ReleaseNotest.txt</includes>
-                            <url>${upload.url}/ini4j-src/${project.version}</url>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>upload-bin</id>
-                        <goals>
-                            <goal>upload</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                        <configuration>
-                            <serverId>ini4j-upload</serverId>
-                            <fromDir>${project.build.directory}</fromDir>
-                            <includes>${project.build.finalName}-bin.zip,ReleaseNotest.txt</includes>
-                            <url>${upload.url}/ini4j-bin/${project.version}</url>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--             <plugin> -->
+<!--                 <groupId>org.codehaus.mojo</groupId> -->
+<!--                 <artifactId>wagon-maven-plugin</artifactId> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <id>upload-all</id> -->
+<!--                         <goals> -->
+<!--                             <goal>upload</goal> -->
+<!--                         </goals> -->
+<!--                         <phase>deploy</phase> -->
+<!--                         <configuration> -->
+<!--                             <serverId>ini4j-upload</serverId> -->
+<!--                             <fromDir>${project.build.directory}</fromDir> -->
+<!--                             <includes>${project.build.finalName}-all.zip,ReleaseNotest.txt</includes> -->
+<!--                             <url>${upload.url}/ini4j/${project.version}</url> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
+<!--                     <execution> -->
+<!--                         <id>upload-src</id> -->
+<!--                         <goals> -->
+<!--                             <goal>upload</goal> -->
+<!--                         </goals> -->
+<!--                         <phase>deploy</phase> -->
+<!--                         <configuration> -->
+<!--                             <serverId>ini4j-upload</serverId> -->
+<!--                             <fromDir>${project.build.directory}</fromDir> -->
+<!--                             <includes>${project.build.finalName}-src.zip,ReleaseNotest.txt</includes> -->
+<!--                             <url>${upload.url}/ini4j-src/${project.version}</url> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
+<!--                     <execution> -->
+<!--                         <id>upload-bin</id> -->
+<!--                         <goals> -->
+<!--                             <goal>upload</goal> -->
+<!--                         </goals> -->
+<!--                         <phase>deploy</phase> -->
+<!--                         <configuration> -->
+<!--                             <serverId>ini4j-upload</serverId> -->
+<!--                             <fromDir>${project.build.directory}</fromDir> -->
+<!--                             <includes>${project.build.finalName}-bin.zip,ReleaseNotest.txt</includes> -->
+<!--                             <url>${upload.url}/ini4j-bin/${project.version}</url> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--             </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
